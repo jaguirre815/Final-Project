@@ -1,8 +1,8 @@
 import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
-import { useEffect, } from "react";
+import { useEffect, useState } from "react";
 import '../assets/css/style.css'
 
-import { useState} from "react";
+
 
 function Home () {
     const { isLoaded } = useLoadScript({
@@ -16,6 +16,8 @@ function Map() {
     const [lat, setLat] = useState(null);
     const [lng, setLng] = useState(null);
     const [status, setStatus] = useState(null);
+    const center = {lat, lng}
+    
     const getLocation = () => {
     if (!navigator.geolocation) {
         setStatus('Geolocation is not supported by your browser');
@@ -31,7 +33,7 @@ function Map() {
     }
     }
    
-    const center = {lat, lng}
+    
     useEffect(()=>{
         getLocation()
     },[])
@@ -41,9 +43,8 @@ function Map() {
        <> 
        {status===null ? ' ': status}
        {/* <button className="btn btn-outline-success" onClick={getLocation}>Get Location</button> */}
-       <h1>Where The Fuck Do You Want To Eat!!!</h1>
-       
-      <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+       <h1>Where The Hell Do You Want To Eat!!!</h1>
+      <GoogleMap zoom={13} center={center} mapContainerClassName="map-container">
         <Marker position={center} />
       </GoogleMap>
       </>
@@ -51,3 +52,4 @@ function Map() {
   }
 
 export default Home
+       
