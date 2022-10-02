@@ -1,23 +1,25 @@
 import { useState } from 'react'
 
-function Input({ setPlace}) {
-    const [places, setPlaces] = useState('')
+function Input({ setPlaces, places}) {
+ const [placeInput, setPlaceInput] = useState(null)  
 
     const handleChange = (e) => {
-        setPlaces(e.target.value)
+        console.log(e.target.value)
+        setPlaceInput(e.target.value)
     }
 
     const clear = () => {
-        setPlaces(null)
+        setPlaces([])
     }
 
     const handleSubmit = async (e) => {
      e.preventDefault()
-     const response = await fetch(`http://localhost:8080/place/food/${places}`) 
+     //console.log('places', places)
+     const response = await fetch(`http://localhost:8080/place/food/${placeInput}`) 
      const data = await response.json()
-     console.log(data)
+     //console.log(data.results)
 
-     setPlace(data)
+     setPlaces(data.results)
      //setPlaces('')
 
     }
@@ -26,7 +28,6 @@ function Input({ setPlace}) {
             <form onSubmit={handleSubmit}>
             <input onChange={handleChange}  placeholder="cuisine"/>
             <button className="btn btn-outline-success" type="submit">Submit</button>
-            <h1>{places}</h1>
             </form>
             <button className="btn btn-outline-success" onClick={clear}>I Changed My mind</button>
         </>
@@ -34,4 +35,5 @@ function Input({ setPlace}) {
 }
 
 export default Input
+            
         

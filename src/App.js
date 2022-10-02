@@ -9,13 +9,19 @@ import './App.css';
 
 
 function App() {
-  const [place, setPlace] = useState(null)
-  const data = place ? <Display place={place}/> : null
+  const [places, setPlaces] = useState([])
+  //console.log(places)
   return (
     <>
       <Navbar />
-      < Input setPlace={setPlace} />
-      {data}
+      < Input setPlaces={setPlaces} places={places}/>
+       {places.length >= 1 && 
+          places.map(place => {
+          return(
+            <Display place={place} />
+          )
+        })
+       }
       < Coordinates />
       < Home />
     </>
