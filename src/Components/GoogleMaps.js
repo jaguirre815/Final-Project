@@ -43,7 +43,7 @@ function Map() {
        <> 
        {status===null ? ' ': status}
        {/* <button className="btn btn-outline-success" onClick={getLocation}>Get Location</button> */}
-       <h1>Where The Hell Do You Want To Eat!!!</h1>
+       
       <GoogleMap zoom={13} center={center} mapContainerClassName="map-container">
         <Marker position={center} />
       </GoogleMap>

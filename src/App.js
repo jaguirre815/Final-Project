@@ -3,6 +3,8 @@ import Coordinates from "./Components/Coordinates";
 import Home from "./Components/GoogleMaps";
 import Input from "./Components/Input";
 import Display from "./Components/Display";
+import Navbar from "./Components/NavBar";
+import './App.css';
 
 
 
@@ -11,6 +13,7 @@ function App() {
   const data = place ? <Display place={place}/> : null
   return (
     <>
+      <Navbar />
       < Input setPlace={setPlace} />
       {data}
       < Coordinates />
