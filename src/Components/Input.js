@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Input({ setPlaces, places}) {
+function Input({ userLocation, setPlaces, places}) {
  const [placeInput, setPlaceInput] = useState(null)  
 
     const handleChange = (e) => {
@@ -14,16 +14,18 @@ function Input({ setPlaces, places}) {
 
     const handleSubmit = async (e) => {
      e.preventDefault()
-     //console.log('places', places)
-     const response = await fetch(`http://localhost:8080/place/food/${placeInput}`) 
+     console.log('userLocation', userLocation)
+     const response = await fetch(`http://localhost:8080/place/cuisine/${placeInput}`) 
      const data = await response.json()
-     //console.log(data.results)
+     console.log(data)
 
      setPlaces(data.results)
      //setPlaces('')
 
     }
     return(
+
+        
         <><h1>Where The Hell Do You Want To Eat 🤬</h1>
             <form onSubmit={handleSubmit}>
             <input onChange={handleChange}  placeholder="cuisine"/>
