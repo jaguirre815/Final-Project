@@ -42,7 +42,7 @@ function Input({ userLocation, setPlaces, places}) {
     return(
 
 
-        <><h1>Where The Hell Do You Want To Eat 🤬</h1>
+        <><h1>Where The Hell Do You Want To Eat </h1>
             <form onSubmit={handleSubmit}>
             <input onChange={handleChange}  placeholder="cuisine"/>
             <button className="btn btn-outline-success" type="submit">Submit</button>

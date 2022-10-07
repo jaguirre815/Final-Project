@@ -23,9 +23,9 @@ function App() {
 
   //console.log(places)
   return (
-    <>
-      <Navbar />
-      < Input userLocation={userLocation} setPlaces={setPlaces} places={places}/>
+    <div >
+      <Navbar userLocation={userLocation} setPlaces={setPlaces} places={places} />
+      {/* < Input userLocation={userLocation} setPlaces={setPlaces} places={places}/> */}
        {places.length >= 1 && 
           places.map(place => {
           return(
@@ -35,7 +35,7 @@ function App() {
        }
       < Coordinates />
       < Home />
-    </>
+    </div>
   );
 }
 
