@@ -31,7 +31,7 @@ function Input({ userLocation, setPlaces, places}) {
      e.preventDefault()
      
      console.log('lat long', lat, lng )
-     const response = await fetch(`http://localhost:8080/place/cuisine/${placeInput}?lat=${lat}&lng=${lng}`) 
+    const response = await fetch(`https://wheretoeatserver.herokuapp.com/location/cuisine/${placeInput}?lat=${lat}&lng=${lng}`)
      const data = await response.json()
      console.log(data)
 
