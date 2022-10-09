@@ -23,15 +23,13 @@ function App() {
 
   //console.log(places)
   return (
-    <div style={{ 
-      backgroundImage: `url("https://image.shutterstock.com/image-photo/traditional-turkish-family-celebration-dinner-600w-1606620157.jpg")` 
-    }}>
+    <div className="main-container background-image">
       <Navbar
         userLocation={userLocation}
         setPlaces={setPlaces}
         places={places}
       />
-      <div className="row">
+      <div className="row" >
         <div className="col-md-7">
           <Coordinates />
           <div>
