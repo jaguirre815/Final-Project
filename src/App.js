@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Coordinates from "./Components/Coordinates";
 import Home from "./Components/GoogleMaps";
-import Input from "./Components/Input";
+//import Input from "./Components/Input";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
 import './App.css';
@@ -23,23 +23,34 @@ function App() {
 
   //console.log(places)
   return (
-    <div >
-      <Navbar userLocation={userLocation} setPlaces={setPlaces} places={places} />
-      {/* < Input userLocation={userLocation} setPlaces={setPlaces} places={places}/> */}
-       {places.length >= 1 && 
-          places.map(place => {
-          return(
-            <Display place={place} />
-          )
-        })
-       }
-      < Coordinates />
-      < Home />
+    <div style={{ 
+      backgroundImage: `url("https://image.shutterstock.com/image-photo/traditional-turkish-family-celebration-dinner-600w-1606620157.jpg")` 
+    }}>
+      <Navbar
+        userLocation={userLocation}
+        setPlaces={setPlaces}
+        places={places}
+      />
+      <div className="row">
+        <div className="col-md-7">
+          <Coordinates />
+          <div>
+          <Home />
+          </div>
+        </div>
+        <div className="col-md-4">
+          {places.length >= 1 &&
+            places.map((place,i) => {
+              return <Display key={i} place={place} />;
+            })}
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+     
 
       
       

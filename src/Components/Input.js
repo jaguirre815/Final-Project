@@ -31,7 +31,8 @@ function Input({ userLocation, setPlaces, places}) {
      e.preventDefault()
      
      console.log('lat long', lat, lng )
-    const response = await fetch(`https://wheretoeatserver.herokuapp.com/location/cuisine/${placeInput}?lat=${lat}&lng=${lng}`)
+
+     const response = await fetch(`https://wheretoeatserver.herokuapp.com/location/cuisine/${placeInput}?lat=${lat}&lng=${lng}`)
      const data = await response.json()
      console.log(data)
 
@@ -39,19 +40,21 @@ function Input({ userLocation, setPlaces, places}) {
      //setPlaces('')
 
     }
-    return(
-
-
-        <><h1>Where The Hell Do You Want To Eat </h1>
-            <form onSubmit={handleSubmit}>
-            <input onChange={handleChange}  placeholder="cuisine"/>
-            <button className="btn btn-outline-success" type="submit">Submit</button>
-            </form>
-            <button className="btn btn-outline-success" onClick={clear}>I Changed My mind</button>
-        </>
-    )
+    return (
+    <>
+      <h3 className="mx-5" style={{color: '#fff'}}>Where The Do You Want To Eat 😚 🥹 😩 😤 🤬</h3>
+      <form onSubmit={handleSubmit} style={{display:'flex'}}>
+        <input
+          onChange={handleChange}
+          className="form-control me-2"
+          placeholder="type something at least"
+        />
+        <button className="btn btn-outline-success mx-2" type="submit">Find it now</button>
+      </form>
+      <button className="btn btn-outline-success" onClick={clear}>I Changed My mind 🥴</button>
+    </>
+  );
 }
 
-export default Input
-            
+export default Input;
         

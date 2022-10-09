@@ -40,6 +40,10 @@ function Places() {
                             <button className="btn btn-success" >Search</button>
                         </div>
                     </form>
+                )
+            }
+            
+            export default Places
                 
             
                
@@ -52,9 +56,5 @@ function Places() {
             
             
                     
-        )
-}
-
-export default Places
 
     
