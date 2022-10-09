@@ -38,10 +38,28 @@
   }
 }
 
-
-
 .map-container {
   width: 50%;
   height: 40vh;
+  margin-top: 10%;
+  margin-left: 10px;
 
+}
+
+.background-image {
+  background-image: url(./assets/css/background.jpg);
+  background-size:cover;
+  /* background-repeat:no-repeat; */
+  background-position:center center; 
+}
+
+.main-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+.button{
+  margin-top: 10%;
+  margin-left: 10%;
+  background-color: #fff;
 }
