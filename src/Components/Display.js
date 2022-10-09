@@ -1,4 +1,5 @@
 function Display({ place }) {
+  
     return (
         <>
           <div className="card mt-2">
@@ -13,6 +14,8 @@ function Display({ place }) {
     }
     
     export default Display;
+        
+        
       
   
 

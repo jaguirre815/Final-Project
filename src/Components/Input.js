@@ -42,7 +42,7 @@ function Input({ userLocation, setPlaces, places}) {
     }
     return (
     <>
-      <h3 className="mx-5" style={{color: '#fff'}}>Where The Do You Want To Eat 😚 🥹 😩 😤 🤬</h3>
+      <h3 className="mx-5" style={{color: '#fff'}}>Where Do You Want To Eat 😚 🥹 😩 😤 🤬</h3>
       <form onSubmit={handleSubmit} style={{display:'flex'}}>
         <input
           onChange={handleChange}

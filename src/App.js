@@ -4,6 +4,7 @@ import Home from "./Components/GoogleMaps";
 //import Input from "./Components/Input";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
+import RandomPlace from "./Components/RandomPlace";
 import './App.css';
 
 
@@ -39,15 +40,19 @@ function App() {
           </div>
         </div>
         <div className="col-md-4">
-          {places.length >= 1 &&
-            places.map((place,i) => {
-              return <Display key={i} place={place} />;
-            })}
-        </div>
+          {places.length >= 1 && 
+          <RandomPlace places={places} />
+          }
+        {places.length >= 1 &&
+          places.map((place,i) => {
+            return <Display key={i} place={place} />;
+          })}
       </div>
     </div>
-  );
+  </div>
+);
 }
+          
 
 export default App;
      
