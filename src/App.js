@@ -5,12 +5,16 @@ import Home from "./Components/GoogleMaps";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
 import RandomPlace from "./Components/RandomPlace";
+import Button from 'react-bootstrap/Button';
+
 import './App.css';
 
 
 
 function App() {
   const [places, setPlaces] = useState([])
+  const [randomPlace, setRandomPlace] = useState({})
+  const [isRandomPlaceEnabled, setIsRandomPlaceEnabled] = useState(false)
   const [userLocation, setUserLocation] = useState({}) 
 
   useEffect(() => {
@@ -21,6 +25,20 @@ function App() {
       })
     })
   }, [])
+
+  useEffect(() => {
+    const calculatedRandomPlace = places[Math.floor(Math.random() * places.length)]
+    
+    setRandomPlace(calculatedRandomPlace)
+  }, [places])
+
+  const handleEnableRandomPlace = () => {
+    setIsRandomPlaceEnabled(true)
+  }
+
+  const handleDisableRandomPlace = () => {
+    setIsRandomPlaceEnabled(false)
+  }
 
   //console.log(places)
   return (
@@ -37,14 +55,23 @@ function App() {
           <Home />
           </div>
         </div>
-        <div className="col-md-4">
+        <div className="overflow-scroll col-md-4">
           {places.length >= 1 && 
-          <RandomPlace places={places} />
+            <div>
+              <Button onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
+
+              <Button onClick={handleDisableRandomPlace} variant="primary">Remove random place</Button>
+            </div>
           }
-        {places.length >= 1 &&
+
+        {(places.length >= 1 && !isRandomPlaceEnabled) &&
           places.map((place,i) => {
             return <Display key={i} place={place} />;
           })}
+
+        {isRandomPlaceEnabled &&
+          <Display place={randomPlace} />
+        }
       </div>
     </div>
   </div>
