@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import Coordinates from "./Components/Coordinates";
+//import Coordinates from "./Components/Coordinates";
 import Home from "./Components/GoogleMaps";
 //import Input from "./Components/Input";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
-import RandomPlace from "./Components/RandomPlace";
 import Button from 'react-bootstrap/Button';
 
 import './App.css';
@@ -50,17 +49,16 @@ function App() {
       />
       <div className="row" >
         <div className="col-md-7">
-          <Coordinates />
           <div>
           <Home />
           </div>
         </div>
-        <div className="overflow-scroll col-md-4">
+        <div className="col-md-4 listRes">
           {places.length >= 1 && 
             <div>
-              <Button onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
-
-              <Button onClick={handleDisableRandomPlace} variant="primary">Remove random place</Button>
+              <Button className="button" onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
+                {/* TODO: Write a function to pick a new restaurant when clicked */}
+              <Button className="button" onClick={handleDisableRandomPlace} variant="primary">Pick Again</Button>
             </div>
           }
 

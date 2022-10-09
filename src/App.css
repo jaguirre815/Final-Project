@@ -42,7 +42,7 @@
   width: 50%;
   height: 40vh;
   margin-top: 10%;
-  margin-left: 10px;
+  margin-left: 10%;
 
 }
 
@@ -59,7 +59,11 @@
 }
 
 .button{
-  margin-top: 10%;
+  margin-top: 15%;
   margin-left: 10%;
-  background-color: #fff;
+  background-color: #43836E;
+}
+.listRes{
+  overflow : scroll;
+  height: 90vh; /* you need to explicity set height for the container*/
 }
