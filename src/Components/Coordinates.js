@@ -23,7 +23,6 @@ const Coordinates = () => {
 	return (
 		<div>
 			<button className="btn btn-outline-success button" onClick={getLocation}>Tell me where I am</button>
-			<h1 className="mx-5" style={{color: '#fff'}}></h1>
             <p>{status}</p>
 			{lat && <p>Latitude: {lat}</p>}
 			{lng && <p>Longitude: {lng}</p>}
