@@ -51,7 +51,7 @@ function App() {
           userLocation={userLocation}
           setPlaces={setPlaces}
           places={places}
-          />
+        />
         <div className="row" >
           <div className="col-md-7">
             <Routes>
@@ -69,14 +69,15 @@ function App() {
               </div>
             }
 
-          {(places.length >= 1 && !isRandomPlaceEnabled) &&
-            places.map((place,i) => {
-              return <Display key={i} place={place} />;
-            })}
+           {(places.length >= 1 && !isRandomPlaceEnabled) &&
+              places.map((place,i) => {
+               return <Display key={i} place={place} />;
+              }
+            )}
 
-          {isRandomPlaceEnabled &&
-            <Display place={randomPlace} />
-          }
+            {isRandomPlaceEnabled &&
+              <Display place={randomPlace} />
+            }
         </div>
       </div>
     </Router>

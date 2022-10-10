@@ -8,14 +8,13 @@ const NavBar = ({userLocation, setPlaces, places}) => {
               <a className="navbar-brand" href="/" style={{color: 'green'}}>Home</a>
               <a className="navbar-brand" href="/signup" style={{color: 'green'}}>Sign Up</a>
               <a className="navbar-brand" href="/login" style={{color: 'green'}}>Log In</a>
-               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span className="navbar-toggler-icon"></span>
-               </button>
-                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                      </ul>
-                      <Input userLocation={userLocation} setPlaces={setPlaces} places={places} />
-                  </div>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                  <Input userLocation={userLocation} setPlaces={setPlaces} places={places} />
+              </div>
           </div>
       </nav>
     )

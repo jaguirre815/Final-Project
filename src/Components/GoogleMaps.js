@@ -19,18 +19,18 @@ function Map() {
     const [lng, setLng] = useState(null);
     const center = {lat, lng}
     const getLocation = () => {
-    if (!navigator.geolocation) {
-        setStatus('Geolocation is not supported by your browser');
-    } else {
-        setStatus('Locating...');
-        navigator.geolocation.getCurrentPosition((position) => {
-            setStatus(null);
-            setLat(position.coords.latitude);
-            setLng(position.coords.longitude);
-        }, () => {
-            setStatus('Unable to retrieve your location');
-        });
-    }
+        if (!navigator.geolocation) {
+            setStatus('Geolocation is not supported by your browser');
+        } else {
+            setStatus('Locating...');
+            navigator.geolocation.getCurrentPosition((position) => {
+                setStatus(null);
+                setLat(position.coords.latitude);
+                setLng(position.coords.longitude);
+            }, () => {
+                setStatus('Unable to retrieve your location');
+            });
+        }
     }
    
     
@@ -40,14 +40,14 @@ function Map() {
     
   
     return (
-       <> 
-       {status===null ? ' ': status}
-       {/* <button className="btn btn-outline-success" onClick={getLocation}>Get Location</button> */}
+        <div> 
+            {status===null ? ' ': status}
+            {/* <button className="btn btn-outline-success" onClick={getLocation}>Get Location</button> */}
        
-      <GoogleMap zoom={13} center={center} mapContainerClassName="map-container">
-        <Marker position={center} />
-      </GoogleMap>
-      </>
+            <GoogleMap zoom={13} center={center} mapContainerClassName="map-container">
+                <Marker position={center} />
+            </GoogleMap>
+        </div>
     );
   }
 

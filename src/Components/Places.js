@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-
-
 function Places() {
     const [place, setPlace] = useState([]);
 
@@ -25,25 +23,22 @@ function Places() {
 
     let placeInfo 
         if(place.name) {
-            placeInfo=  [<h2>{place.name}</h2>,
+            placeInfo= [<h2>{place.name}</h2>,
             <img src={place.image} alt='product' />]
             
         }
 
-        return (
-        
-           
-                
-                    <form className="container-fluid col-6" onSubmit={handleSubmit}>
-                            <input className="form-control me-8" id="submitPlace" onChange={handleChange} placeholder="what you want to eat at least" />
-                        <div className="d-grid gap-2">
-                            <button className="btn btn-success" >Search</button>
-                        </div>
-                    </form>
-                )
-            }
+        return (   
+            <form className="container-fluid col-6" onSubmit={handleSubmit}>
+                <input className="form-control me-8" id="submitPlace" onChange={handleChange} placeholder="what you want to eat at least" />
+                <div className="d-grid gap-2">
+                    <button className="btn btn-success" >Search</button>
+                </div>
+            </form>
+        )
+}
             
-            export default Places
+export default Places
                 
             
                
