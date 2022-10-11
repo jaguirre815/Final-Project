@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
+
 //import Coordinates from "./Components/Coordinates";
 import Home from "./Components/GoogleMaps";
 //import Input from "./Components/Input";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
 import Button from 'react-bootstrap/Button';
+import SignUp from "./Components/Signup";
+import Login from "./Components/Login";
 
 import './App.css';
 
@@ -42,36 +46,40 @@ function App() {
   //console.log(places)
   return (
     <div className="main-container background-image">
-      <Navbar
-        userLocation={userLocation}
-        setPlaces={setPlaces}
-        places={places}
-      />
-      <div className="row" >
-        <div className="col-md-7">
-          <div>
-          <Home />
+      <Router>
+        <Navbar
+          userLocation={userLocation}
+          setPlaces={setPlaces}
+          places={places}
+        />
+        <div className="row" >
+          <div className="col-md-7">
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/login' element={<Login />} />
+            </Routes>
           </div>
-        </div>
-        <div className="col-md-4 listRes">
-          {places.length >= 1 && 
-            <div>
-              <Button className="button" onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
-                {/* TODO: Write a function to pick a new restaurant when clicked */}
-              <Button className="button" onClick={handleDisableRandomPlace} variant="primary">Pick Again</Button>
-            </div>
-          }
+          <div className="col-md-4 listRes">
+            {places.length >= 1 && 
+              <div>
+                <Button className="button" onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
+                  {/* TODO: Write a function to pick a new restaurant when clicked */}
+                <Button className="button" onClick={handleDisableRandomPlace} variant="primary">Pick Again</Button>
+              </div>
+            }
 
-        {(places.length >= 1 && !isRandomPlaceEnabled) &&
-          places.map((place,i) => {
-            return <Display key={i} place={place} />;
-          })}
+           {(places.length >= 1 && !isRandomPlaceEnabled) &&
+              places.map((place,i) => {
+               return <Display key={i} place={place} />;
+              }
+            )}
 
         {(isRandomPlaceEnabled && places.length >= 1) &&
           <Display place={randomPlace} />
         }
       </div>
-    </div>
+    </Router>
   </div>
 );
 }
