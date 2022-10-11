@@ -12,8 +12,6 @@ import Login from "./Components/Login";
 
 import './App.css';
 
-
-
 function App() {
   const [places, setPlaces] = useState([])
   const [randomPlace, setRandomPlace] = useState({})
@@ -28,7 +26,7 @@ function App() {
       })
     })
   }, [])
-
+console.log('places')
   useEffect(() => {
     const calculatedRandomPlace = places[Math.floor(Math.random() * places.length)]
     
@@ -43,7 +41,7 @@ function App() {
     setIsRandomPlaceEnabled(false)
   }
 
-  //console.log(places)
+  console.log('2nd place')
   return (
     <div className="main-container background-image">
       <Router>
@@ -84,7 +82,6 @@ function App() {
 );
 }
           
-
 export default App;
      
 
