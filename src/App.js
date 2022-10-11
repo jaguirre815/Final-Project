@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router,Routes, Route, } from 'react-router-dom'
 
-//import Coordinates from "./Components/Coordinates";
 import Home from "./Components/GoogleMaps";
-//import Input from "./Components/Input";
 import Display from "./Components/Display";
 import Navbar from "./Components/NavBar";
 import Button from 'react-bootstrap/Button';
 import SignUp from "./Components/Signup";
 import Login from "./Components/Login";
+import History from "./Components/History";
+import Favorites from "./Components/Favorites";
 
 import './App.css';
 
 
-
 function App() {
+  const [token, setToken] = useState();  //added jwt
   const [places, setPlaces] = useState([])
   const [randomPlace, setRandomPlace] = useState({})
   const [isRandomPlaceEnabled, setIsRandomPlaceEnabled] = useState(false)
   const [userLocation, setUserLocation] = useState({}) 
+
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -43,6 +44,10 @@ function App() {
     setIsRandomPlaceEnabled(false)
   }
 
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
+
   //console.log(places)
   return (
     <div className="main-container background-image">
@@ -58,6 +63,8 @@ function App() {
               <Route exact path='/' element={<Home /> } />
               <Route path='/signup' element={<SignUp />} />
               <Route path='/login' element={<Login />} />
+              <Route path="/dashboard" element={<History />} />
+              <Route path="/preferences" element={<Favorites />} />
             </Routes>
           </div>
           <div className="col-md-4 listRes">
@@ -65,7 +72,7 @@ function App() {
               <div>
                 <Button className="button" onClick={handleEnableRandomPlace} variant="primary">Pick a Restaurant for Me</Button> 
                   {/* TODO: Write a function to pick a new restaurant when clicked */}
-                <Button className="button" onClick={handleDisableRandomPlace} variant="primary">Pick Again</Button>
+                <Button className="button" onClick={handleDisableRandomPlace} variant="primary">Restaurants Near Me</Button>
               </div>
             }
 
@@ -74,10 +81,10 @@ function App() {
                return <Display key={i} place={place} />;
               }
             )}
+            {(isRandomPlaceEnabled && places.length >= 1) &&
+              <Display place={randomPlace} />
+            }
         </div>
-        {(isRandomPlaceEnabled && places.length >= 1) &&
-          <Display place={randomPlace} />
-        }
       </div>
     </Router>
   </div>

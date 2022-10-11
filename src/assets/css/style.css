@@ -25,3 +25,18 @@ a {
     width: 100%;
     padding: 0.5rem;
   }
+
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: antiquewhite;
+    margin-top: 100px;
+  }
+  .signup-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: antiquewhite;
+    margin-top: 50px;
+  }

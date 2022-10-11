@@ -60,11 +60,15 @@
 
 .button{
   margin-top: 15%;
-  margin-left: 10%;
+  margin-left: 10px;
   background-color: #43836E;
 }
 .listRes{
   overflow : scroll;
   height: 90vh; /* you need to explicity set height for the container*/
+}
+.wrapper {
+  padding: 20px;
+  color: antiquewhite;
 }
 
