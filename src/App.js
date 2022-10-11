@@ -38,7 +38,7 @@ function App() {
   const handleEnableRandomPlace = () => {
     setIsRandomPlaceEnabled(true)
   }
-
+  
   const handleDisableRandomPlace = () => {
     setIsRandomPlaceEnabled(false)
   }
@@ -55,7 +55,7 @@ function App() {
         <div className="row" >
           <div className="col-md-7">
             <Routes>
-              <Route exact path='/' element={<Home />} />
+              <Route exact path='/' element={<Home /> } />
               <Route path='/signup' element={<SignUp />} />
               <Route path='/login' element={<Login />} />
             </Routes>
