@@ -75,10 +75,9 @@ function App() {
               }
             )}
 
-            {isRandomPlaceEnabled &&
-              <Display place={randomPlace} />
-            }
-        </div>
+        {(isRandomPlaceEnabled && places.length >= 1) &&
+          <Display place={randomPlace} />
+        }
       </div>
     </Router>
   </div>
