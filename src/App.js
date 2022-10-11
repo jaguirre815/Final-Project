@@ -74,7 +74,7 @@ function App() {
                return <Display key={i} place={place} />;
               }
             )}
-
+        </div>
         {(isRandomPlaceEnabled && places.length >= 1) &&
           <Display place={randomPlace} />
         }
