@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Where Do You Want To Eat?
+1. This is our University of WI Software Development Bootcamp Final Project inspired by Joel Aguirre with collaborators Ellie Diaz and Deb Koch.  Joel and his wife were discussing, again, where to go for dinner with the age-old "I don't know.  Where do you want to eat?" back and forth dialogue.  Joel decided that there should be an app to settle the debate and this project is the result.   
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. This project was created/designed to answer the often asked question on where to eat.  When you open the webpage, you are asked to set your location.  You have the option to sign-up or log-in, however, you can skip that and simply enter the type of cuisine you're leaning towards then click "Find It Now".  The app will generate a list of the restaurants within a 5-6 mile radius of your current location that match the cuisine type you entered.  Next, click on "Pick a Restaurant For Me" and a randomly chosen restaurant from the list will be displayed.  That's where you're going to dinner!   If the chosen place is a No-Go, then "Pick Again" for another choice (although this is not currently functional) or at the top click on "I Changed My Mind" and enter a new cuisine choice for a new list of restaurants. 
+    a. In satisfying the application requirements, Express-Node.js was used for the backend, React was used for the frontend and we used Mongodb for our database.  It also required a secure sign-up and log-in option.  The app is deployed on Netlify at https://wheredoyouwanttoeat.netlify.app/
 
-## Available Scripts
+    b. As coding newbies, some of our biggest challenges were:
+        - getting the chosen restaurant to display on the browser;
+        - adding the user authenticator.
+    
+    c. Features we would still like to implement are:
+        - making the "Pick Again" button actually bring up a different randomly selected restaurant; 
+        - having a user's favorites list to select from;
+        - ability to comment on a restaurant;
+        - exclude a restaurant choice that has already been chosen;
+        - limit restaurants provided based on reviewer rating.
 
-In the project directory, you can run:
+3. How to Use the Project:  When you just can't decide where to eat, let the app choose for you!
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Credits:
+    Collaborators: - Joel    github.com/jaguirre815  linkedin.com/in/joel-aguirre
+                   - Ellie   github.com/Elliediazz   linkedin.com/in/elliediaz
+                   - Deb     github.com/DebraMK      linkedin.com/in/debra-koch
+                    
+    Instructors:   - Chris Mendoza
+                   - Ava Wingfield
